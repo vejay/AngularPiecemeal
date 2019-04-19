@@ -1,0 +1,1 @@
+import {BootstrapComponent} from './bootstrap.component';

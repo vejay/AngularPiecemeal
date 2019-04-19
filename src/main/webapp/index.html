@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <base href="/">
+        <title>Demo</title>
+        <link rel="icon" href="favicon.ico" />
+
+        <!--<script src="require.js" data-main="js/dynamicng2loader.js" language="javascript"></script> -->
+        <!--<script src="dynamicng2loader.js" type="text/javascript" language="javascript"></script> -->
+
+        <script src="index.js" type="text/javascript" language="javascript"></script>
+
+        <!--<script src="vendor.js" type="text/javascript" language="javascript"></script>
+        <script src="runtime.js" type="text/javascript" language="javascript"></script>
+        <script src="polyfills.js" type="text/javascript" language="javascript"></script>
+        <script src="es2015-polyfills.js" type="text/javascript" language="javascript"></script>
+        <script src="styles.js" type="text/javascript" language="javascript"></script>
+        <script src="main.js" type="text/javascript" language="javascript"></script> -->
+
+        <!-- Shouldn't need to manually include this file here.  The vendor.js file has it automatically exported-->
+        <!-- <script src="./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js" type="text/javascript" language="javascript"></script> -->
+        <!-- <script src="{{asset('js/app.js')}}"></script> -->
+
+    </head>
+    <body>
+        <p>Say <a href="hello">Hello</a></p>
+
+        <form method="POST" action="hello">
+            <h2>Name: </h2>
+            <input type="text" id="say-hello-text-input" name="name">
+            <input type="submit" id="say-hello-button" value="Go To Non-Angular">
+             <hr />
+            <div style="height: 300px; padding-top: 5px; margin-top: 10px;">
+
+                <input style="margin-top: 15px;" type="button" id="goto-angular" value="Go to Angular Component" onClick="gotoAngular()">
+            </div>
+        </form>
+
+        <div id="angular-container" style="display:none;">
+            <!--<app-root></app-root> -->
+            <bootstrap></bootstrap>
+        </div>
+
+        <script src="polyfills.js" type="text/javascript" language="javascript"></script>
+        <script src="es2015-polyfills.js" type="text/javascript" language="javascript"></script>
+        <script src="vendor.js" type="text/javascript" language="javascript"></script>
+        <script src="styles.js" type="text/javascript" language="javascript"></script>
+        <script src="main.js" type="text/javascript" language="javascript"></script>
+        <script type="text/javascript" src="runtime.js"></script>
+
+
+    </body>
+</html>
