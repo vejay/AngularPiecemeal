@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BootstrapModule } from '../bootstrap/bootstrap.module';
-import { BootstrapComponent } from 'src/bootstrap/bootstrap.component';
+import { BootstrapModule } from './bootstrap/bootstrap.module';
+import { BootstrapComponent } from 'src/app/bootstrap/bootstrap.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,8 @@ import { BootstrapComponent } from 'src/bootstrap/bootstrap.component';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [BootstrapComponent]
+  bootstrap: [BootstrapComponent],
+  entryComponents:[AppComponent]
   //bootstrap: [AppComponent]
 })
 export class AppModule { }

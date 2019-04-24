@@ -1,3 +1,5 @@
+const {platformBrowserDynamic} = require ("@angular/platform-browser-dynamic");
+
 function gotoAngular() {
     console.log('gotoAngular called');
     //TODO VKV: Perform  the dynamic loading of the component here.

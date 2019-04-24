@@ -1,4 +1,5 @@
 import {Type, ApplicationRef, ComponentFactoryResolver, Component, ComponentRef, Injector, NgZone} from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 
 export class DynamicNg2Loader {
@@ -29,3 +30,4 @@ export class DynamicNg2Loader {
         return componentRef;
     }
 }
+
