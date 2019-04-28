@@ -1,0 +1,10 @@
+node_modules
+.gradle
+.idea
+bin
+build
+.vscode
+dist
+gradle-version=4.10
+.project
+out

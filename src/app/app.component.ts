@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AppService} from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'NonAngular Title From AppComponent';
-  componentId = 1
+  componentId = -1;
+  
+  constructor(private appService: AppService) {
+      this.componentId = appService.getNextId();
+  }
 }

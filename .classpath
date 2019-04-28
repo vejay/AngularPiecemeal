@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="lib" path="gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="radle-version=4.10/caches/4.10/embedded-kotlin-repo-1.2.60-2/repo/org/jetbrains/annotations/13.0/annotations-13.0.jar"/>
+	<classpathentry kind="lib" path="radle-version=4.10/caches/4.10/embedded-kotlin-repo-1.2.60-2/repo/org/jetbrains/kotlin/kotlin-compiler-embeddable/1.2.60/kotlin-compiler-embeddable-1.2.60.jar"/>
+	<classpathentry kind="lib" path="radle-version=4.10/caches/4.10/embedded-kotlin-repo-1.2.60-2/repo/org/jetbrains/kotlin/kotlin-reflect/1.2.60/kotlin-reflect-1.2.60.jar"/>
+	<classpathentry kind="lib" path="radle-version=4.10/caches/4.10/embedded-kotlin-repo-1.2.60-2/repo/org/jetbrains/kotlin/kotlin-sam-with-receiver-compiler-plugin/1.2.60/kotlin-sam-with-receiver-compiler-plugin-1.2.60.jar"/>
+	<classpathentry kind="lib" path="radle-version=4.10/caches/4.10/embedded-kotlin-repo-1.2.60-2/repo/org/jetbrains/kotlin/kotlin-script-runtime/1.2.60/kotlin-script-runtime-1.2.60.jar"/>
+	<classpathentry kind="lib" path="radle-version=4.10/caches/4.10/embedded-kotlin-repo-1.2.60-2/repo/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.2.60/kotlin-stdlib-jdk7-1.2.60.jar"/>
+	<classpathentry kind="lib" path="radle-version=4.10/caches/4.10/embedded-kotlin-repo-1.2.60-2/repo/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.2.60/kotlin-stdlib-jdk8-1.2.60.jar"/>
+	<classpathentry kind="lib" path="radle-version=4.10/caches/4.10/embedded-kotlin-repo-1.2.60-2/repo/org/jetbrains/kotlin/kotlin-stdlib/1.2.60/kotlin-stdlib-1.2.60.jar"/>
+	<classpathentry kind="lib" path="radle-version=4.10/caches/4.10/generated-gradle-jars/gradle-api-4.10.jar"/>
+	<classpathentry kind="lib" path="radle-version=4.10/caches/4.10/generated-gradle-jars/gradle-kotlin-dsl-extensions-1.0-rc-3-4.10.jar"/>
+	<classpathentry kind="lib" path="radle-version=4.10/caches/4.10/gradle-kotlin-dsl-accessors/9315etxf3sekqwxq1u2t0pq16/cache/gradle-kotlin-dsl-accessors.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

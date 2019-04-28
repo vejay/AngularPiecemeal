@@ -1,0 +1,79 @@
+import org.springframework.boot.gradle.tasks.bundling.BootWar
+
+plugins {
+	id 'org.springframework.boot' version '2.1.4.RELEASE'
+	id 'war'
+	id 'org.jetbrains.kotlin.jvm' version '1.2.71'
+	id 'org.jetbrains.kotlin.plugin.spring' version '1.2.71'
+	id 'org.gretty' version '2.2.0'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+	jcenter()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.jetbrains.kotlin:kotlin-reflect'
+	implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+compileKotlin {
+	kotlinOptions {
+		freeCompilerArgs = ['-Xjsr305=strict']
+		jvmTarget = '1.8'
+	}
+}
+
+compileTestKotlin {
+	kotlinOptions {
+		freeCompilerArgs = ['-Xjsr305=strict']
+		jvmTarget = '1.8'
+	}
+}
+
+task buildNg(type: Exec) {
+	group "Build"
+	description "Builds Angular modules."
+	commandLine  "npm", "run", "build"
+
+}
+
+task copyNgFiles(type: Copy) {
+	group "Copy"
+	description "Copy compiled angular files to build/inplaceWebApp directory."
+
+	from("dist/NonAngularAsMain")
+	into("build/inplaceWebapp")
+}
+
+task copyNgFilesToStaging(type: Copy) {
+	group "Copy"
+	description "Copy compiled angular files into WAR file staging directory."
+
+	from("dist/NonAngularAsMain")
+	into("output/NonAngularAsMain")
+}
+
+//bootRun runs the application in an exploded form, so it is NOT possible to include the 'compiled' ng files into bootRun.
+task cleanBootRun(type: GradleBuild) {
+	dependsOn "clean", "build", "buildNg", "copyNgFilesToStaging", "bootRun"
+}
+
+task buildWar(type: org.springframework.boot.gradle.tasks.bundling.BootWar) {
+	dependsOn "clean", "build", "buildNg" 
+	mainClassName "org.sample.demo.GreetingKt"
+
+	from("dist/NonAngularAsMain") {
+		into "/"
+	}
+}

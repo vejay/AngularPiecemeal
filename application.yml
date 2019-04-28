@@ -1,0 +1,9 @@
+myconfig:
+  my-host: localhost
+  my-port: 23894
+  my-user: user
+  my-pass: pass
+
+spring:
+  main:
+    web-application-type: servlet

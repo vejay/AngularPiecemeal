@@ -28,6 +28,7 @@ if(environment.angularOnly) {
     let container = document.getElementById("ng-component-container");
     container.className += "js-flex-container";
     //document.getElementById("non-angular").hidden = false;
+    let loadedComponentRefs = new Map();
 
     document.getElementById('goto-angular').onclick = function() {
       console.log('create angular clicked');
@@ -35,36 +36,20 @@ if(environment.angularOnly) {
       container.appendChild(parent);
 
       let componentRef = ng2Loader.loadComponentAtDom(AppComponent, parent, (instance) => {
-          //instance.value = document.getElementById('text-input').nodeValue;
+          //instance.value = document.getElementById('text-input').nodeValue;          
       });
+
+      loadedComponentRefs.set(componentRef.instance.componentId, componentRef);
     }
 
     document.getElementById('remove-angular-comp').onclick = function() {
-      console.log('remove angular comp clicked');
-      
+      let idToRemove = (<HTMLInputElement>document.getElementById('remove-compId')).value;
+      loadedComponentRefs.forEach( compRef => {
+          if(compRef.instance.componentId == idToRemove) {
+            compRef.destroy();
+          }
+      })
     }
-
-
-    //Original code starts from here.
-    /*let ng2Loader = new DynamicNg2Loader(ng2ModuleInjector);
-    let container = document.getElementById('angular-container');
-    document.getElementById('non-angular').hidden = false;
-    
-    let count = 0;
-    document.getElementById('add-component').onclick = function() {
-      let parent = document.createElement('app-parent');
-      container.appendChild(parent);
-      let compRef = ng2Loader.loadComponentAtDom(CheckListItem, parent, (instance) => {
-        instance.value = document.getElementById('text-input').value;
-      });
-      loadedComponentReferences.push(compRef);
-    };
-    document.getElementById('remove-components').onclick = function () {
-      loadedComponentReferences.forEach(compRef => {
-        compRef.destroy();
-      });
-    }*/
-
   });
 }
 

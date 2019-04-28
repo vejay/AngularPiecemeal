@@ -3,28 +3,13 @@
         <base href="/">
         <title>Demo</title>
         <link rel="icon" href="favicon.ico" />
-
-        <!--<script src="require.js" data-main="js/dynamicng2loader.js" language="javascript"></script> -->
-        <!--<script src="dynamicng2loader.js" type="text/javascript" language="javascript"></script> -->
-
         <script src="index.js" type="text/javascript" language="javascript"></script>
-
-        <!--<script src="vendor.js" type="text/javascript" language="javascript"></script>
-        <script src="runtime.js" type="text/javascript" language="javascript"></script>
-        <script src="polyfills.js" type="text/javascript" language="javascript"></script>
-        <script src="es2015-polyfills.js" type="text/javascript" language="javascript"></script>
-        <script src="styles.js" type="text/javascript" language="javascript"></script>
-        <script src="main.js" type="text/javascript" language="javascript"></script> -->
-
-        <!-- Shouldn't need to manually include this file here.  The vendor.js file has it automatically exported-->
-        <!-- <script src="./node_modules/@angular/platform-browser-dynamic/fesm5/platform-browser-dynamic.js" type="text/javascript" language="javascript"></script> -->
-        <!-- <script src="{{asset('js/app.js')}}"></script> -->
-
     </head>
     <body>
-        <p>Say <a href="hello">Hello</a></p>
+        <h2>Angular in JS App</h2>
+        <!-- <p>Say <a href="hello">Hello</a></p> -->
 
-        <form method="POST" action="hello">
+        <!-- <form method="POST" action="hello">
             <h4>Name: </h4>
             <input type="text" id="say-hello-text-input" name="name">
             <input type="submit" id="say-hello-button" value="Non-ng Page">
@@ -33,20 +18,27 @@
                 <input style="margin-top: 15px;" type="button" id="goto-angular" value="Create ng Component">
                 <span style="margin-top: 15px">
                     <span style="margin-left: 20px;"></span>
-                    <input style="margin-top: 5px; width:30px;" type="text" id="compId" placeholder="Id"/>
+                    <input style="margin-top: 5px; width:40px; heigh: 20px;" type="text" id="remove-compId" placeholder="Id"/>
                     <input type="button" id="remove-angular-comp" value="Unload ng Component" />
                 </span>
             </div>
-        </form>
+        </form> -->
+        <div>
+            <input style="margin-top: 15px;" type="button" id="goto-angular" value="Create ng Component">
+            <span style="margin-top: 15px">
+                <span style="margin-left: 20px;"></span>
+                <input style="margin-top: 5px; width:40px; heigh: 20px;" type="text" id="remove-compId" placeholder="Id"/>
+                <input type="button" id="remove-angular-comp" value="Unload ng Component" />
+            </span>
+        </div>
 
         <hr />
 
         <div id="angular-container" style="width: 0px; height: 0px; position: absolute; top: -1000px; display: none;">
-            <!-- <app-root></app-root> -->
             <bootstrap></bootstrap>
         </div>
 
-        <div id="ng-component-container">
+        <div id="ng-component-container" class="ng-component-container">
 
         </div>
 
